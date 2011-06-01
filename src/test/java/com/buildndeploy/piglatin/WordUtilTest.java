@@ -19,4 +19,8 @@ public class WordUtilTest {
 		assertTrue(WordUtil.isCapitalized("Foo"));
 		assertFalse(WordUtil.isCapitalized("bar"));
 	}
+	
+	public void noVowelReturnsNegative() {
+		assertEquals(-1, WordUtil.getIndexOfFirstVowel("Hmm"));
+	}
 }

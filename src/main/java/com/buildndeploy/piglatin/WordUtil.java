@@ -24,7 +24,7 @@ public final class WordUtil {
 
 	static int getIndexOfFirstVowel(String word) {
 		int wordLength = word.length();
-		int index = 0;
+		int index = -1;
 	
 		for (int i = 0; i < wordLength; i++) {
 			if (isVowel(word.charAt(i))) {
