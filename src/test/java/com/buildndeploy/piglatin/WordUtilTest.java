@@ -20,7 +20,20 @@ public class WordUtilTest {
 		assertFalse(WordUtil.isCapitalized("bar"));
 	}
 	
+	@Test
 	public void noVowelReturnsNegative() {
 		assertEquals(-1, WordUtil.getIndexOfFirstVowel("Hmm"));
 	}
+
+	@Test
+	public void emptyWordHasNoVowels() {
+		assertEquals(-1, WordUtil.getIndexOfFirstVowel(""));
+	}
+	
+	@Test
+	public void emptyWordIsntCapitalized() {
+		assertEquals(-1, WordUtil.getIndexOfFirstVowel(""));
+	}
+
 }
+
