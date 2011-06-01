@@ -1,29 +1,29 @@
 package com.buildndeploy.piglatin;
 
 public class Translator {
-	public String toPiglatin(String originalWord) {
-		if (WordUtil.startsWithVowel(originalWord)) {
-			return (addWay(originalWord));
+	public String toPiglatin(String word) {
+		if (WordUtil.startsWithVowel(word)) {
+			return (addWay(word));
 		} else {
-			return (swapAndAddWay(originalWord));
+			return (swapAndAddWay(word));
 		}
 	}
 
-	private String swapAndAddWay(String originalWord) {
-		int firstVowelIndex = WordUtil.getIndexOfFirstVowel(originalWord);
+	private String swapAndAddWay(String word) {
+		int firstVowelIndex = WordUtil.getIndexOfFirstVowel(word);
 
-		String piglatinStart = originalWord.substring(firstVowelIndex);
-		String piglatinEnd = originalWord.substring(0, firstVowelIndex).toLowerCase();
+		String piglatinStart = word.substring(firstVowelIndex);
+		String piglatinEnd = word.substring(0, firstVowelIndex).toLowerCase();
 		String piglatinWord = piglatinStart + piglatinEnd + "ay";
 
-		if (WordUtil.isCapitalized(originalWord)) {
+		if (WordUtil.isCapitalized(word)) {
 			piglatinWord = WordUtil.capitalize(piglatinWord);
 		}
 
 		return piglatinWord;
 	}
 
-	private String addWay(String originalWord) {
-		return originalWord + "way";
+	private String addWay(String word) {
+		return word + "way";
 	}
 }
