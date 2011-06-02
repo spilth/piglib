@@ -2,7 +2,7 @@ package com.buildndeploy.piglatin;
 
 public final class WordUtil {
 	
-	static final String VOWELS = "AEIOUYaeiouy";
+	private static final String VOWELS = "AEIOUYaeiouy";
 
 	private WordUtil() {};
 
@@ -10,8 +10,8 @@ public final class WordUtil {
 		return Character.toUpperCase(word.charAt(0)) + word.substring(1);
 	}
 
-	public static boolean isCapitalized(String originalWord) {
-		return Character.isUpperCase(originalWord.charAt(0));
+	public static boolean isCapitalized(String word) {
+		return Character.isUpperCase(word.charAt(0));
 	}
 
 	static boolean startsWithVowel(String word) {
