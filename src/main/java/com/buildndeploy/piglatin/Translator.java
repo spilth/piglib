@@ -1,12 +1,20 @@
 package com.buildndeploy.piglatin;
 
 public class Translator {
-	public String toPiglatin(String word) {
-		if (WordUtil.startsWithVowel(word)) {
-			return (addWay(word));
-		} else {
-			return (swapAndAddWay(word));
+	public String toPiglatin(String sentence) {
+		String[] words = sentence.split(" ");
+		StringBuffer newSentence = new StringBuffer();
+				
+		for (String word : words) {
+			newSentence.append(translateWord(word));
+			newSentence.append(" ");
 		}
+		
+		return newSentence.toString();
+	}
+
+	protected String translateWord(String word) {
+		return (WordUtil.startsWithVowel(word)) ? addWay(word) : swapAndAddWay(word);
 	}
 
 	private String swapAndAddWay(String word) {
