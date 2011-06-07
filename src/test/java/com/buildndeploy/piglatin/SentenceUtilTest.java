@@ -7,12 +7,12 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class TextUtilTest {
+public class SentenceUtilTest {
 
 	@Test
 	public void testParse() {
 		String sentence = "First third fifth!";
-		List<String> pieces = TextUtil.toList(sentence);
+		List<String> pieces = SentenceUtil.toList(sentence);
 		List<String> expected = new ArrayList<String>();
 		expected.add("First");
 		expected.add(" ");
