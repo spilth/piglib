@@ -8,38 +8,28 @@ public class SentenceUtil {
 	public static List<String> toList(String sentence) {
 		boolean collectingWord = true;
 		List<String> pieces = new ArrayList<String>();
-		StringBuffer collectingString = new StringBuffer();
-		Character currentCharacter;
+		StringBuffer collectedString = new StringBuffer();
+		char[] characters = sentence.toCharArray();
 		
-		for (int i = 0; i < sentence.length(); i++) {
-			currentCharacter = sentence.charAt(i);
-
-			if (Character.isLetter(currentCharacter)) {
-				if (collectingWord == true) {
-					collectingString.append(currentCharacter);
-
-				} else {
-					pieces.add(collectingString.toString());
+		for (char character : characters) {
+			if (Character.isLetter(character)) {
+				if (collectingWord == false) {
+					pieces.add(collectedString.toString());
 					collectingWord = !collectingWord;
-					collectingString = new StringBuffer();
-					collectingString.append(currentCharacter);
-
+					collectedString = new StringBuffer();
 				}
 			} else {
-				if (collectingWord == false) {
-					collectingString.append(currentCharacter);
-
-				} else {
-					pieces.add(collectingString.toString());
+				if (collectingWord == true) {
+					pieces.add(collectedString.toString());
 					collectingWord = !collectingWord;
-					collectingString = new StringBuffer();
-					collectingString.append(currentCharacter);
-
+					collectedString = new StringBuffer();
 				}
 			}
-			
+
+			collectedString.append(character);
+
 		}
-		pieces.add(collectingString.toString());
+		pieces.add(collectedString.toString());
 
 		return pieces;
 	}
