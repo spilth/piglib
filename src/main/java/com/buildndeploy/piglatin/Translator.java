@@ -8,11 +8,7 @@ public class Translator {
 		StringBuffer newSentence = new StringBuffer();
 				
 		for (String piece : pieces) {
-			if (WordUtil.isWord(piece)) {
-				newSentence.append(translateWord(piece));
-			} else {
-				newSentence.append(piece);
-			}
+			newSentence.append(WordUtil.isWord(piece) ? translateWord(piece) : piece);
 		}
 		
 		return newSentence.toString();
