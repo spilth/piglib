@@ -1,15 +1,14 @@
 package com.buildndeploy.piglatin;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Translator {
 	public String toPiglatin(String sentence) {
-		List<String> pieces = new ArrayList<String>(SentenceUtil.toList(sentence));
+		List<String> pieces = SentenceUtil.toList(sentence);
 		StringBuffer newSentence = new StringBuffer();
 				
 		for (String piece : pieces) {
-			if (Character.isLetter(piece.charAt(0))) {
+			if (WordUtil.isWord(piece)) {
 				newSentence.append(translateWord(piece));
 			} else {
 				newSentence.append(piece);

@@ -36,4 +36,16 @@ public final class WordUtil {
 		return index;
 	}
 
+	public static boolean isWord(String piece) {
+		boolean isWord = true;
+		for (int i = 0; i < piece.length(); i++) {
+			if (!Character.isLetter(piece.charAt(i))) {
+				isWord = false;
+				break;
+			}
+		}
+		
+		return isWord;
+	}
+
 }

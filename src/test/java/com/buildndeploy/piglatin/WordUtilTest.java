@@ -35,6 +35,11 @@ public class WordUtilTest {
 		assertEquals(-1, WordUtil.getIndexOfFirstVowel(""));
 	}
 	
+	@Test
+	public void wordsContainOnlyLetters() {
+		assertTrue(WordUtil.isWord("foo"));
+		assertFalse(WordUtil.isWord("bar!"));
+	}
 
 }
 
