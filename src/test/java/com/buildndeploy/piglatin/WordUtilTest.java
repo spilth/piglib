@@ -34,6 +34,7 @@ public class WordUtilTest {
 	public void emptyWordIsntCapitalized() {
 		assertEquals(-1, WordUtil.getIndexOfFirstVowel(""));
 	}
+	
 
 }
 

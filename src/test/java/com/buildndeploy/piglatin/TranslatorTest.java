@@ -31,6 +31,7 @@ public class TranslatorTest {
 	@Test
 	public void sentence() {
 		assertEquals("Ellohay orldway", translator.toPiglatin("Hello world"));
+		assertEquals("Ellohay, orldway!", translator.toPiglatin("Hello, world!"));
 	}
 	
 }
