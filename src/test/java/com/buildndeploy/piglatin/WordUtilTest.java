@@ -37,8 +37,10 @@ public class WordUtilTest {
 	
 	@Test
 	public void wordsContainOnlyLetters() {
-		assertTrue(WordUtil.isWord("foo"));
-		assertFalse(WordUtil.isWord("bar!"));
+		assertTrue(WordUtil.isWord("word"));
+		assertFalse(WordUtil.isWord("exclaim!"));
+		assertFalse(WordUtil.isWord("spaceAfter "));
+		assertFalse(WordUtil.isWord(" spaceBefore"));
 	}
 
 }
