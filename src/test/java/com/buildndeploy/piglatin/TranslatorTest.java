@@ -29,6 +29,11 @@ public class TranslatorTest {
 	}
 
 	@Test
+	public void hypenatedWord() {
+		assertEquals("oggyday-addlepay", translator.toPiglatin("doggy-paddle"));
+	}
+
+	@Test
 	public void sentence() {
 		assertEquals("Ellohay orldway", translator.toPiglatin("Hello world"));
 		assertEquals("Ellohay, orldway!", translator.toPiglatin("Hello, world!"));
