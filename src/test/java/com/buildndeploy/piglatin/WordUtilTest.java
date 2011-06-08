@@ -41,6 +41,7 @@ public class WordUtilTest {
 		assertFalse(WordUtil.isWord("exclaim!"));
 		assertFalse(WordUtil.isWord("spaceAfter "));
 		assertFalse(WordUtil.isWord(" spaceBefore"));
+		assertTrue("A contraction should be considered a word", WordUtil.isWord("don't"));
 	}
 
 }

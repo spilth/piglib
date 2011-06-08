@@ -27,6 +27,11 @@ public class TranslatorTest {
 		assertEquals("Agmaticpray", translator.translateWord("Pragmatic"));
 		assertEquals("ytray", translator.translateWord("try"));
 	}
+	
+	@Test
+	public void wordWithContraction() {
+		assertEquals("on'tday", translator.translateWord("don't"));
+	}
 
 	@Test
 	public void hypenatedWord() {
@@ -37,6 +42,7 @@ public class TranslatorTest {
 	public void sentence() {
 		assertEquals("Ellohay orldway", translator.toPiglatin("Hello world"));
 		assertEquals("Ellohay, orldway!", translator.toPiglatin("Hello, world!"));
+		assertEquals("On'tday anicpay!", translator.toPiglatin("Don't panic!"));
 	}
 	
 }

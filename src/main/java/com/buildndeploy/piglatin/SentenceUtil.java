@@ -31,11 +31,11 @@ public class SentenceUtil {
 	}
 
 	private static boolean switchingToNonWord(boolean collectingWord, char character) {
-		return !Character.isLetter(character) && collectingWord == true;
+		return !WordUtil.isValidWordCharacter(character) && collectingWord == true;
 	}
 
 	private static boolean switchingToWord(boolean collectingWord, char character) {
-		return Character.isLetter(character) && collectingWord == false;
+		return WordUtil.isValidWordCharacter(character) && collectingWord == false;
 	}
 
 }

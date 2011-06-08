@@ -39,13 +39,17 @@ public final class WordUtil {
 	public static boolean isWord(String piece) {
 		boolean isWord = true;
 		for (int i = 0; i < piece.length(); i++) {
-			if (!Character.isLetter(piece.charAt(i))) {
+			if (!isValidWordCharacter(piece.charAt(i))) {
 				isWord = false;
 				break;
 			}
 		}
 		
 		return isWord;
+	}
+
+	static boolean isValidWordCharacter(char character) {
+		return Character.isLetter(character) || character == '\'';
 	}
 
 }

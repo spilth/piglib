@@ -35,4 +35,17 @@ public class SentenceUtilTest {
 				
 		assertEquals("Lists not the same", expected, pieces);
 	}
+	
+	@Test
+	public void sentenceWithContractedWord() {
+		String sentence = "Don't panic!";
+		List<String> pieces = SentenceUtil.toList(sentence);
+		List<String> expected = new ArrayList<String>(
+			Arrays.asList(
+				new String[ ]{"Don't", " ", "panic", "!"}
+			)
+		);
+				
+		assertEquals("Lists not the same", expected, pieces);	
+	}
 }
