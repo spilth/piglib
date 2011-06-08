@@ -2,9 +2,7 @@ package com.buildndeploy.piglatin;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import org.junit.Test;
 
@@ -13,39 +11,21 @@ public class SentenceUtilTest {
 	@Test
 	public void sentencesBecomeLists() {
 		String sentence = "First third fifth!";
-		List<String> pieces = SentenceUtil.toList(sentence);
-		List<String> expected = new ArrayList<String>(
-			Arrays.asList(
-				new String[ ]{"First", " ", "third", " ", "fifth", "!"}
-			)
-		);
-				
-		assertEquals("Lists not the same", expected, pieces);
+		String[] sentenceArray = {"First", " ", "third", " ", "fifth", "!"};
+		assertEquals("Lists not the same", Arrays.asList(sentenceArray), SentenceUtil.toList(sentence));
 	}
 	
 	@Test
 	public void sentencesStartsWithNumber() {
 		String sentence = " More to go?";
-		List<String> pieces = SentenceUtil.toList(sentence);
-		List<String> expected = new ArrayList<String>(
-			Arrays.asList(
-				new String[ ]{" ", "More", " ", "to", " ", "go", "?"}
-			)
-		);
-				
-		assertEquals("Lists not the same", expected, pieces);
+		String[] sentenceArray = {" ", "More", " ", "to", " ", "go", "?"};				
+		assertEquals("Lists not the same", Arrays.asList(sentenceArray), SentenceUtil.toList(sentence));
 	}
 	
 	@Test
 	public void sentenceWithContractedWord() {
 		String sentence = "Don't panic!";
-		List<String> pieces = SentenceUtil.toList(sentence);
-		List<String> expected = new ArrayList<String>(
-			Arrays.asList(
-				new String[ ]{"Don't", " ", "panic", "!"}
-			)
-		);
-				
-		assertEquals("Lists not the same", expected, pieces);	
+		String[] sentenceArray = {"Don't", " ", "panic", "!"};
+		assertEquals("Lists not the same", Arrays.asList(sentenceArray), SentenceUtil.toList(sentence));
 	}
 }
