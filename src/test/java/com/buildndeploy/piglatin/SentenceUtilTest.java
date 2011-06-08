@@ -10,22 +10,30 @@ public class SentenceUtilTest {
 
 	@Test
 	public void sentencesBecomeLists() {
-		String sentence = "First third fifth!";
-		String[] sentenceArray = {"First", " ", "third", " ", "fifth", "!"};
-		assertEquals("Lists not the same", Arrays.asList(sentenceArray), SentenceUtil.toList(sentence));
+		assertStringListEquals(
+			"First third fifth!",
+			new String[]{"First", " ", "third", " ", "fifth", "!"}
+		);
 	}
 	
 	@Test
-	public void sentencesStartsWithNumber() {
-		String sentence = " More to go?";
-		String[] sentenceArray = {" ", "More", " ", "to", " ", "go", "?"};				
-		assertEquals("Lists not the same", Arrays.asList(sentenceArray), SentenceUtil.toList(sentence));
+	public void sentenceStartsWithNonWord() {
+		assertStringListEquals(
+			" More to go?",
+			new String[] {" ", "More", " ", "to", " ", "go", "?"}
+		);	
 	}
 	
 	@Test
 	public void sentenceWithContractedWord() {
-		String sentence = "Don't panic!";
-		String[] sentenceArray = {"Don't", " ", "panic", "!"};
+		assertStringListEquals(
+			"Don't panic!",
+			new String[] {"Don't", " ", "panic", "!"}
+		);	
+	}
+
+	private void assertStringListEquals(String sentence, String[] sentenceArray) {
 		assertEquals("Lists not the same", Arrays.asList(sentenceArray), SentenceUtil.toList(sentence));
 	}
+
 }

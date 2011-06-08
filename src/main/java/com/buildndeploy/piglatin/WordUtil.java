@@ -48,7 +48,7 @@ public final class WordUtil {
 		return isWord;
 	}
 
-	static boolean isValidWordCharacter(char character) {
+	public static boolean isValidWordCharacter(char character) {
 		return Character.isLetter(character) || character == '\'';
 	}
 
