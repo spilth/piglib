@@ -11,7 +11,7 @@ import org.junit.Test;
 public class SentenceUtilTest {
 
 	@Test
-	public void testParse() {
+	public void sentencesBecomeLists() {
 		String sentence = "First third fifth!";
 		List<String> pieces = SentenceUtil.toList(sentence);
 		List<String> expected = new ArrayList<String>(
@@ -23,4 +23,16 @@ public class SentenceUtilTest {
 		assertEquals("Lists not the same", expected, pieces);
 	}
 	
+	@Test
+	public void sentencesStartsWithNumber() {
+		String sentence = " More to go?";
+		List<String> pieces = SentenceUtil.toList(sentence);
+		List<String> expected = new ArrayList<String>(
+			Arrays.asList(
+				new String[ ]{" ", "More", " ", "to", " ", "go", "?"}
+			)
+		);
+				
+		assertEquals("Lists not the same", expected, pieces);
+	}
 }

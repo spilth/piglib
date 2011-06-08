@@ -6,32 +6,36 @@ import java.util.List;
 public class SentenceUtil {
 
 	public static List<String> toList(String sentence) {
-		boolean collectingWord = true;
 		List<String> pieces = new ArrayList<String>();
 		StringBuffer collectedString = new StringBuffer();
-		char[] characters = sentence.toCharArray();
+		boolean isCollectingWord = Character.isLetter(sentence.charAt(0));
 		
-		for (char character : characters) {
-			if (Character.isLetter(character)) {
-				if (collectingWord == false) {
-					pieces.add(collectedString.toString());
-					collectingWord = !collectingWord;
-					collectedString = new StringBuffer();
-				}
-			} else {
-				if (collectingWord == true) {
-					pieces.add(collectedString.toString());
-					collectingWord = !collectingWord;
-					collectedString = new StringBuffer();
-				}
+		for (char character : sentence.toCharArray()) {
+			if (switchingCollectionMode(isCollectingWord, character)) {
+				pieces.add(collectedString.toString());
+				collectedString = new StringBuffer();
+				isCollectingWord = !isCollectingWord;
 			}
 
 			collectedString.append(character);
-
 		}
+
 		pieces.add(collectedString.toString());
 
 		return pieces;
+	}
+
+	private static boolean switchingCollectionMode(boolean collectingWord, char character) {
+		return (switchingToWord(collectingWord, character))
+		|| (switchingToNonWord(collectingWord, character));
+	}
+
+	private static boolean switchingToNonWord(boolean collectingWord, char character) {
+		return !Character.isLetter(character) && collectingWord == true;
+	}
+
+	private static boolean switchingToWord(boolean collectingWord, char character) {
+		return Character.isLetter(character) && collectingWord == false;
 	}
 
 }
