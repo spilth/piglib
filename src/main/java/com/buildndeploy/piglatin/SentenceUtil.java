@@ -3,7 +3,7 @@ package com.buildndeploy.piglatin;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SentenceUtil {
+public final class SentenceUtil {
 
 	private SentenceUtil() {};
 	
