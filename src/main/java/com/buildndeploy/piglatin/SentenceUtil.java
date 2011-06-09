@@ -5,6 +5,8 @@ import java.util.List;
 
 public class SentenceUtil {
 
+	private SentenceUtil() {};
+	
 	public static List<String> toList(String sentence) {
 		List<String> pieces = new ArrayList<String>();
 		StringBuffer collectedString = new StringBuffer();
@@ -31,11 +33,11 @@ public class SentenceUtil {
 	}
 
 	private static boolean switchingToNonWord(boolean collectingWord, char character) {
-		return !WordUtil.isValidWordCharacter(character) && collectingWord == true;
+		return !WordUtil.isValidWordCharacter(character) && collectingWord;
 	}
 
 	private static boolean switchingToWord(boolean collectingWord, char character) {
-		return WordUtil.isValidWordCharacter(character) && collectingWord == false;
+		return WordUtil.isValidWordCharacter(character) && !collectingWord;
 	}
 
 }
