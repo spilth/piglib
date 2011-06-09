@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TranslatorTest {
 	
-	Translator translator = new Translator();
+	private Translator translator = new Translator();
 		
 	@Test
 	public void wordStartsWithSingleConsanant() {
