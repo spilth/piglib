@@ -1,6 +1,7 @@
 package com.buildndeploy.piglatin;
 
 import java.util.List;
+import java.util.Locale;
 
 public class Translator {
 	public String toPiglatin(String sentence) {
@@ -22,7 +23,7 @@ public class Translator {
 		int firstVowelIndex = WordUtil.getIndexOfFirstVowel(word);
 
 		String piglatinStart = word.substring(firstVowelIndex);
-		String piglatinEnd = word.substring(0, firstVowelIndex).toLowerCase();
+		String piglatinEnd = word.substring(0, firstVowelIndex).toLowerCase(Locale.ENGLISH);
 		String piglatinWord = piglatinStart + piglatinEnd + "ay";
 
 		if (WordUtil.isCapitalized(word)) {
