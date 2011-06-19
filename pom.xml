@@ -10,6 +10,12 @@
 	<name>piglib</name>
 	<url>http://www.buildndeploy.com/</url>
 	<description>A library for translating English to Piglatin.</description>
+	
+	<scm>
+    	<connection>scm:git:git@github.com:buildndeploy/piglib.git</connection>
+	    <developerConnection>scm:git:git@github.com:buildndeploy/piglib.git</developerConnection>
+	    <url>https://github.com/buildndeploy/piglib</url>
+	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
