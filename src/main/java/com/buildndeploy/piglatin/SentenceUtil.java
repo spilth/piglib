@@ -9,21 +9,26 @@ public final class SentenceUtil {
 	
 	public static List<String> toList(String sentence) {
 		List<String> pieces = new ArrayList<String>();
-		StringBuffer collectedString = new StringBuffer();
-		boolean isCollectingWord = Character.isLetter(sentence.charAt(0));
+
+		if (sentence.length() == 0) {
+			pieces.add("");		
+		} else {
+			StringBuffer collectedString = new StringBuffer();
+			boolean isCollectingWord = Character.isLetter(sentence.charAt(0));
 		
-		for (char character : sentence.toCharArray()) {
-			if (switchingCollectionMode(isCollectingWord, character)) {
-				pieces.add(collectedString.toString());
-				collectedString = new StringBuffer();
-				isCollectingWord = !isCollectingWord;
+			for (char character : sentence.toCharArray()) {
+				if (switchingCollectionMode(isCollectingWord, character)) {
+					pieces.add(collectedString.toString());
+					collectedString = new StringBuffer();
+					isCollectingWord = !isCollectingWord;
+				}
+
+				collectedString.append(character);
 			}
 
-			collectedString.append(character);
+			pieces.add(collectedString.toString());
 		}
-
-		pieces.add(collectedString.toString());
-
+		
 		return pieces;
 	}
 

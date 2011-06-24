@@ -32,6 +32,14 @@ public class SentenceUtilTest {
 		);	
 	}
 
+	@Test
+	public void emptySentence() {
+		assertStringListEquals(
+			"",
+			new String[] {""}
+		);	
+	}	
+	
 	private void assertStringListEquals(String sentence, String[] sentenceArray) {
 		assertEquals("Lists not the same", Arrays.asList(sentenceArray), SentenceUtil.toList(sentence));
 	}

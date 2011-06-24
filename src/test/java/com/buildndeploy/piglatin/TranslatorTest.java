@@ -45,4 +45,14 @@ public class TranslatorTest {
 		assertEquals("On'tday anicpay!", translator.toPiglatin("Don't panic!"));
 	}
 	
+	@Test
+	public void emptySentenceReturnsEmptyString() {
+		assertEquals("", translator.toPiglatin(""));		
+	}
+
+	@Test
+	public void emptyWordReturnsEmptyString() {
+		assertEquals("", translator.translateWord(""));		
+	}
+
 }
