@@ -16,7 +16,7 @@ public class Translator {
 	}
 
 	protected String translateWord(String word) {
-		if (word.equals("")) return "";
+		if ("".equals(word)) return "";
 		return (WordUtil.startsWithVowel(word)) ? addWay(word) : swapAndAddWay(word);
 	}
 
