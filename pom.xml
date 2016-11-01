@@ -4,7 +4,7 @@
 
 	<groupId>org.spilth</groupId>
 	<artifactId>piglib</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.4</version>
 	<packaging>jar</packaging>
 
 	<name>piglib</name>
