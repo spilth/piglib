@@ -1,4 +1,4 @@
-package com.buildndeploy.piglatin;
+package org.spilth.piglatin;
 
 import java.util.ArrayList;
 import java.util.List;
