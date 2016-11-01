@@ -1,4 +1,4 @@
-package com.buildndeploy.piglatin;
+package org.spilth.piglatin;
 
 import java.util.List;
 import java.util.Locale;

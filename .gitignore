@@ -1,6 +1,13 @@
-target
+# OS X
 .DS_Store
+
+# Maven
+target
+
+# IntelliJ
 .idea
+piglib.iml
+
+# Eclipse
 .settings
 .project
-piglib.iml
