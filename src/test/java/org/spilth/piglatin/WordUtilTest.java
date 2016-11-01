@@ -1,4 +1,4 @@
-package com.buildndeploy.piglatin;
+package org.spilth.piglatin;
 
 import org.junit.Test;
 
