@@ -4,7 +4,7 @@
 
 	<groupId>org.spilth</groupId>
 	<artifactId>piglib</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>piglib</name>
@@ -32,6 +32,17 @@
         <developerConnection>scm:git:git@github.com:spilth/piglib.git</developerConnection>
         <url>https://github.com/spilth/piglib</url>
     </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
