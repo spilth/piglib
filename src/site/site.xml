@@ -1,10 +1,21 @@
 <project name="piglib">
     <skin>
-        <groupId>org.apache.maven.skins</groupId>
-        <artifactId>maven-fluido-skin</artifactId>
-        <version>1.5</version>
+        <groupId>lt.velykis.maven.skins</groupId>
+        <artifactId>reflow-maven-skin</artifactId>
+        <version>1.1.1</version>
     </skin>
     <body>
         <menu ref="reports"/>
     </body>
+    <custom>
+        <reflowSkin>
+            <theme>bootswatch-simplex</theme>
+            <highlightJs>true</highlightJs>
+            <brand>
+                <name>piglib</name>
+                <href>https://github.com/spilth/piglib</href>
+            </brand>
+            <titleTemplate>%2$s | %1$s</titleTemplate>
+        </reflowSkin>
+    </custom>
 </project>

@@ -4,20 +4,14 @@ A Java library for converting English to Pig Latin.
 
 ## Usage
 
-Add piglib as a dependency:
+For usage information, please visit [http://piglib.spilth.org](http://piglib.spilth.org)
 
-```xml
-<dependency>
-    <groupId>org.spilth</groupId>
-    <artifactId>piglib</artifactId>
-    <version>1.0.4</version>
-</dependency>
-```
+## Development
 
-Then use the `Translator` class to translate text:
+To get started working on piglib, do the following:
 
-```java
-Translator translator = new Translator();
-String translatedWord = translator.translateWord("java");
-String translatedSentence = translator.toPiglatin("I love Java!");
+```bash
+$ git clone git@github.com:spilth/piglib.git
+$ cd piglib
+$ mvn
 ```
