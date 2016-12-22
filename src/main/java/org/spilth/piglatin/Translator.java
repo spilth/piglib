@@ -4,6 +4,12 @@ import java.util.List;
 import java.util.Locale;
 
 public class Translator {
+
+	/**
+	 * Converts a sentence into its piglatin equivalent
+	 * @param sentence The sentence to translate
+	 * @return The pigtalin version of the given sentence
+	 */
 	public String toPiglatin(String sentence) {
 		List<String> pieces = SentenceUtil.toList(sentence);
 		StringBuffer newSentence = new StringBuffer();
@@ -15,7 +21,7 @@ public class Translator {
 		return newSentence.toString();
 	}
 
-	protected String translateWord(String word) {
+	public String translateWord(String word) {
 		if ("".equals(word)) return "";
 		return (WordUtil.startsWithVowel(word)) ? addWay(word) : swapAndAddWay(word);
 	}

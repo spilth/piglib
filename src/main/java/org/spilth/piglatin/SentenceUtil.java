@@ -6,7 +6,12 @@ import java.util.List;
 public final class SentenceUtil {
 
 	private SentenceUtil() {};
-	
+
+	/**
+	 * Turns a single sentence into a list of individual words
+	 * @param sentence The sentence to convert
+	 * @return A list of individual words
+	 */
 	public static List<String> toList(String sentence) {
 		List<String> pieces = new ArrayList<String>();
 
